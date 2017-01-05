@@ -354,8 +354,8 @@ public class JSONHelper {
                 Category category = determineCategory((String) object.get("Category"));
                 String name = (String) object.get("Name");
                 String description = (String) object.get("Description");
-                String lattitude = (String) object.get("Lattitude");
-                String longtitude = (String) object.get("Longtitude");
+                double lattitude =  Double.parseDouble((String)object.get("Lattitude"));
+                double longtitude = Double.parseDouble((String)object.get("Longtitude"));
                 Highlight highlight = new Highlight(city, category, name, description, lattitude, longtitude);
                 result.put(name, highlight);
             }

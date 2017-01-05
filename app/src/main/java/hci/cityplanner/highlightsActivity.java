@@ -2,6 +2,7 @@ package hci.cityplanner;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,10 +17,11 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class highlightsActivity extends AppCompatActivity {
+public class HighlightsActivity extends AppCompatActivity {
     private HashMap<String, Highlight> highlights;
     private ArrayList<String> selectedHighlights;
     private ArrayList<String> spinnerHighlights;
@@ -149,5 +151,13 @@ public class highlightsActivity extends AppCompatActivity {
 
         table.addView(newRow);
         rowCount++;
+    }
+
+    public void loadChooseRoute(View view) {
+        Intent intent = new Intent(this, ChooseRouteActivity.class);
+        Bundle data = new Bundle();
+        data.putStringArray("Highlights", Arrays.copyOf(selectedHighlights.toArray(), selectedHighlights.size(), String[].class));
+        intent.putExtra("Data", data);
+        startActivity(intent);
     }
 }

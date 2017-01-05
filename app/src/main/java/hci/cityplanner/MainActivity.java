@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadMap(View view) {
-        Intent intent = new Intent(this, highlightsActivity.class);
+        Intent intent = new Intent(this, HighlightsActivity.class);
         startActivity(intent);
     }
 }

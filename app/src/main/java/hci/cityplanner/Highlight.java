@@ -1,5 +1,7 @@
 package hci.cityplanner;
 
+import com.google.android.gms.maps.model.LatLng;
+
 /**
  * Created by Sander on 19-12-2016.
  */
@@ -9,10 +11,10 @@ public class Highlight {
     private Category category;
     private String name;
     private String description;
-    private String lattitude;
-    private String longtitude;
+    private double lattitude;
+    private double longtitude;
 
-    public Highlight(String city, Category category, String name, String description, String lattitude, String longtitude) {
+    public Highlight(String city, Category category, String name, String description, double lattitude, double longtitude) {
         this.city = city;
         this.category = category;
         this.name = name;
@@ -49,11 +51,15 @@ public class Highlight {
         return description;
     }
 
-    public String getLattitude() {
+    public double getLattitude() {
         return lattitude;
     }
 
-    public String getLongtitude() {
+    public double getLongtitude() {
         return longtitude;
+    }
+
+    public LatLng getLatLng() {
+        return new LatLng(lattitude, longtitude);
     }
 }

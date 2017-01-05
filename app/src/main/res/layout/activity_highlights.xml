@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="hci.cityplanner.highlightsActivity">
+    tools:context="hci.cityplanner.HighlightsActivity">
 
     <TextView
         android:text="Highlights"
@@ -75,6 +75,7 @@
         android:layout_width="fill_parent"
         android:background="#2c497a"
         android:text=" Next "
+        android:onClick="loadChooseRoute"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
         android:layout_height="wrap_content"

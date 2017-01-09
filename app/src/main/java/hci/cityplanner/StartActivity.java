@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.Arrays;
+
 public class StartActivity extends AppCompatActivity {
 
     @Override
@@ -14,7 +16,10 @@ public class StartActivity extends AppCompatActivity {
     }
 
     public void openMap(View view) {
-        Intent intent = new Intent(this, MapsActivity.class);
+        Intent intent = new Intent(this, HighlightsActivity.class);
+        Bundle data = new Bundle();
+      //  data.putStringArray("Highlights", Arrays.copyOf(selectedHighlights.toArray(), selectedHighlights.size(), String[].class));
+        intent.putExtra("Data", data);
         startActivity(intent);
     }
 }

@@ -53,8 +53,8 @@
         android:layout_below="@+id/highlightsText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/imageButton"
-        android:layout_toStartOf="@+id/imageButton" />
+        android:layout_toLeftOf="@+id/food"
+        android:layout_toStartOf="@+id/food" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
         android:onClick="addHighlight"
         android:tint="#2c497a"
         app:srcCompat="@android:drawable/ic_input_add"
-        android:id="@+id/imageButton"
+        android:id="@+id/food"
         android:layout_alignBottom="@+id/selectHighlightSpinner"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"

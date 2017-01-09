@@ -39,6 +39,9 @@ public class HighlightsActivity extends AppCompatActivity {
         this.selectedHighlights = new ArrayList<>();
         this.spinnerHighlights = new ArrayList<>();
 
+        Bundle b = getIntent().getBundleExtra("Data");
+        //boolean[] categories = Arrays.copyOf((Object[]) b.get("Categories"), ((Object[]) b.get("Categories")).length, boolean[].class);
+
         this.city = "Paris";
 
         this.categories = new ArrayList<>();

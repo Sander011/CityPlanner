@@ -27,7 +27,7 @@ public class HighlightsActivity extends AppCompatActivity {
     private ArrayList<String> spinnerHighlights;
     private JSONHelper jsonHelper;
     private String city;
-    private ArrayList<Category> categories;
+    private ArrayList<Category> categories = new ArrayList<>();
     final Context context = this;
     private int rowCount = 0;
 
@@ -40,14 +40,20 @@ public class HighlightsActivity extends AppCompatActivity {
         this.spinnerHighlights = new ArrayList<>();
 
         Bundle b = getIntent().getBundleExtra("Data");
-        //boolean[] categories = Arrays.copyOf((Object[]) b.get("Categories"), ((Object[]) b.get("Categories")).length, boolean[].class);
-
-        this.city = "Paris";
-
-        this.categories = new ArrayList<>();
-        this.categories.add(Category.CULTURE);
-        this.categories.add(Category.FOOD);
-
+        boolean[] categories = (boolean[])b.get("Categories");
+        if (categories[0]) {
+            this.categories.add(Category.NATURE);
+        }
+        if (categories[1]) {
+            this.categories.add(Category.CULTURE);
+        }
+        if (categories[2]) {
+            this.categories.add(Category.FOOD);
+        }
+        if (categories[3]) {
+            this.categories.add(Category.SHOPPING);
+        }
+        this.city = (String)b.get("City");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highlights);
 
